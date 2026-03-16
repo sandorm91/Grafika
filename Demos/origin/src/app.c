@@ -25,11 +25,11 @@ void init_app(App* app, int width, int height)
         return;
     }
 
-    inited_loaders = IMG_Init(IMG_INIT_PNG);
+    /*inited_loaders = IMG_Init(IMG_INIT_PNG);
     if (inited_loaders == 0) {
         printf("[ERROR] IMG initialization error: %s\n", IMG_GetError());
         return;
-    }
+    }*/
 
     app->gl_context = SDL_GL_CreateContext(app->window);
     if (app->gl_context == NULL) {

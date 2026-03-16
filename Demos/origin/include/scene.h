@@ -27,4 +27,10 @@ void render_scene(const Scene* scene);
  */
 void draw_origin();
 
+void draw_triangle();
+
+void draw_tessellated_ball(float radius, int slices, int stacks);  
+
+void draw_tessellated_cylinder(float radius, float height, int slices);
+
 #endif /* SCENE_H */
