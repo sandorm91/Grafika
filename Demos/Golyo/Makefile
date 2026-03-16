@@ -1,0 +1,1 @@
+gcc main.c -o steel_ball -lGL -lGLU -lglut
