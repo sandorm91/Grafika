@@ -1,6 +1,9 @@
 #ifndef PAD_H
 #define PAD_H
 
+#include "texture.h"
+#include <obj/model.h>
+
 enum ColorTheme {
     RED_THEME,
     GREEN_THEME
@@ -17,6 +20,7 @@ typedef struct Pad
     float height;
     float limit;
     float speed;
+    GLuint texture_id;
     enum ColorTheme color_theme;
 } Pad;
 

@@ -8,13 +8,13 @@ void init_scene(Scene* scene)
     // load_model(&(scene->cube), "assets/models/cube.obj");
     // scene->texture_id = load_texture("assets/textures/cube.png");
     load_model(&(scene->cube), "assets/models/cube.obj");
-    scene->texture_id = load_texture("assets/textures/cube.png");
+    scene->texture_id = load_texture("assets/textures/cube.jpg");
 
     glBindTexture(GL_TEXTURE_2D, scene->texture_id);
 
-    scene->material.ambient.red = 0.0;
-    scene->material.ambient.green = 0.0;
-    scene->material.ambient.blue = 0.0;
+    scene->material.ambient.red = 0.4;
+    scene->material.ambient.green = 0.4;
+    scene->material.ambient.blue = 0.4;
 
     scene->material.diffuse.red = 1.0;
     scene->material.diffuse.green = 1.0;
@@ -29,15 +29,22 @@ void init_scene(Scene* scene)
 
 void set_lighting()
 {
-    float ambient_light[] = { 0.0f, 0.0f, 0.0f, 1.0f };
+    float ambient_light[] = { 0.4f, 0.4f, 0.4f, 1.0f };
     float diffuse_light[] = { 1.0f, 1.0f, 1.0, 1.0f };
     float specular_light[] = { 0.0f, 0.0f, 0.0f, 1.0f };
-    float position[] = { 0.0f, 0.0f, 10.0f, 1.0f };
+    float position1[] = { 5.0f, 5.0f, 10.0f, 1.0f };
+    float position2[] = { -5.0f, -5.0f, 10.0f, 1.0f };
+    float position3[] = { -5.0f, 5.0f, -10.0f, 1.0f };
+    float position4[] = { 5.0f, -5.0f, -10.0f, 1.0f };
 
     glLightfv(GL_LIGHT0, GL_AMBIENT, ambient_light);
     glLightfv(GL_LIGHT0, GL_DIFFUSE, diffuse_light);
     glLightfv(GL_LIGHT0, GL_SPECULAR, specular_light);
-    glLightfv(GL_LIGHT0, GL_POSITION, position);
+    glLightfv(GL_LIGHT0, GL_POSITION, position1);
+    glLightfv(GL_LIGHT1, GL_POSITION, position2);
+    glLightfv(GL_LIGHT2, GL_POSITION, position3);
+    glLightfv(GL_LIGHT3, GL_POSITION, position4);
+    
 }
 
 void set_material(const Material* material)

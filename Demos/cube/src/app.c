@@ -66,6 +66,9 @@ void init_opengl()
 
     glEnable(GL_LIGHTING);
     glEnable(GL_LIGHT0);
+    glEnable(GL_LIGHT1);
+    glEnable(GL_LIGHT2);
+    glEnable(GL_LIGHT3);
 }
 
 void reshape(GLsizei width, GLsizei height)
@@ -125,6 +128,18 @@ void handle_app_events(App* app)
             case SDL_SCANCODE_D:
                 set_camera_side_speed(&(app->camera), -1);
                 break;
+            case SDL_SCANCODE_E:
+                set_camera_vertical_speed(&(app->camera), 1);
+                break;
+            case SDL_SCANCODE_Q:
+                set_camera_vertical_speed(&(app->camera), -1);
+                break;
+            case SDL_SCANCODE_J:
+                rotate_camera(&(app->camera), 1, 0);
+                break;
+            case SDL_SCANCODE_K:
+                rotate_camera(&(app->camera), -1, 0);
+                break;
             default:
                 break;
             }
@@ -138,6 +153,10 @@ void handle_app_events(App* app)
             case SDL_SCANCODE_A:
             case SDL_SCANCODE_D:
                 set_camera_side_speed(&(app->camera), 0);
+                break;
+            case SDL_SCANCODE_E:
+            case SDL_SCANCODE_Q:
+                set_camera_vertical_speed(&(app->camera), 0);
                 break;
             default:
                 break;

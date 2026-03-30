@@ -10,6 +10,8 @@ void init_pad(Pad* pad, float x, float table_height, enum ColorTheme color_theme
     pad->height = 250;
     pad->limit = table_height - pad->height;
     pad->speed = 0;
+    pad->texture_id= load_texture("assets/textures/left.jpg");
+    glBindTexture(GL_TEXTURE_2D, pad->texture_id);
     pad->color_theme = color_theme;
 }
 
